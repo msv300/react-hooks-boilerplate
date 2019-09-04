@@ -13,9 +13,15 @@
   "license": "MIT",
   "description": "React Hooks Boilerplate with Redux store, eslint and coverage.",
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-hot-loader": "^4.12.11"
+    "react-hot-loader": "^4.12.11",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-immutable": "^4.0.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
