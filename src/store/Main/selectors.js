@@ -6,3 +6,8 @@ export const getCounter = createSelector(
   mainStore(),
   store => store.get('counter')
 );
+
+export const getTodo = createSelector(
+  mainStore(),
+  store => store.get('todo')
+);

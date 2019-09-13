@@ -7,3 +7,12 @@ export const incrementCounter = () => ({
 export const decrementCounter = () => ({
   type: types.SUBTRACT_COUNTER
 });
+
+export const fetchTodos = () => ({
+  type: types.FETCH_TODOS
+});
+
+export const receivedTodos = (result) => ({
+  type: types.RECEIVED_TODOS,
+  result
+});

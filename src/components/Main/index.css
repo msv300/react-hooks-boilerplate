@@ -1,7 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 20px;
 }
 
@@ -15,8 +23,19 @@
   color: #FFF;
 }
 
+.error {
+  color: #bf4242;
+  border: 1px solid #9a3636;
+  border-radius: 4px;
+  padding: 12px 50px;
+}
+
 .imgLogo {
   width: 36px;
   height: 36px;
-  margin-right: 20px; 
+  margin-right: 20px;
+}
+
+button {
+  margin: 10px;
 }
