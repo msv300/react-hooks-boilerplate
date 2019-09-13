@@ -6,13 +6,12 @@ const { env } = process;
 
 const options = {
   mode: env.NODE_ENV,
-  entry: './src/index.js',
+  entry: ['babel-core/register', 'babel-polyfill', './src/index.js'],
   output: {
     filename: '[name].js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
@@ -45,8 +44,7 @@ const options = {
       },
       {
         test: /\.(jpg|png|gif)$/,
-        use:
-        {
+        use: {
           loader: 'url-loader',
           options: {
             // Inline files smaller than 10 kB

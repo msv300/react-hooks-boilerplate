@@ -2,6 +2,8 @@
 
 This boilerplate could help you start to with React Hooks, comes packed with webpack, hot reloading, lint, redux store configs.
 
+Just a try to add global store for react hooks using redux store.
+
 To install dependencies
 ```
 npm install
@@ -10,7 +12,7 @@ npm install
 ```
 npm start
 ```
-and open http://localhost:8080
+and open http://localhost:4000
 
 To generate build run below
 ```
