@@ -4,21 +4,23 @@ import * as actions from '../../store/Main/actions';
 import { getCounter, getTodo } from '../../store/Main/selectors';
 import './index.css';
 import reactImg from '../../assets/react.svg';
-import { fetchTodos } from '../../store/Main/apis';
+import { fetchTodos, fetchDataUsingCustomHook } from '../../store/Main/apis';
 
 const Main = () => {
   const [todo, setTodo] = useState({});
   const [error, setError] = useState(null);
   const counter = useSelector(getCounter);
-  const todo1 = useSelector(getTodo);
+  const todoFromStore = useSelector(getTodo);
   const dispatch = useDispatch();
 
+  // useFetch is a custom hook used for fetching data.
+  // Cannot be called inside useEffect cause useFetch is itself is a HOOK..!!
+  fetchDataUsingCustomHook();
+
   const fetchData = async () => {
-    dispatch(actions.fetchTodos());
     let response = await fetchTodos();
     if (response && !response.error) {
       setTodo(response);
-      dispatch(actions.receivedTodos(response));
     } else {
       setError("Error while fetching data");
     }
@@ -41,23 +43,23 @@ const Main = () => {
         <p className="primary">
           Counter: {counter}
         </p>
+        <div className="container">
+          <button onClick={incrementCounter}>Add</button>
+          <button onClick={decrementCounter}>Subtract</button>
+        </div>
       </div>
       <div className="wrapper">
-       {error && <p className="error">
+        {error && <p className="error">
           {error}
         </p>}
-        {todo && todo.id && <>
+        {todo && todo.id &&
           <p className="primary">
             Todo Title(state): {todo.title}
-          </p>
+          </p>}
+        {todoFromStore && todoFromStore.id &&
           <p className="primary">
-            Todo Title(store): {todo1.title}
-          </p>
-        </>}
-      </div>
-      <div className="container">
-        <button onClick={incrementCounter}>Add</button>
-        <button onClick={decrementCounter}>Subtract</button>
+            Todo Title(store): {todoFromStore.title}
+          </p>}
       </div>
     </>
   );
