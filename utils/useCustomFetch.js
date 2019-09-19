@@ -1,6 +1,11 @@
+// This is Expiremental. We could also use react-hooks-fetch
+// until Suspense comes up with its own data fetching feature.
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+
+// For network clean up using "AbortController" refer following link
+// https://itnext.io/how-to-create-react-custom-hooks-for-data-fetching-with-useeffect-74c5dc47000a
 
 const useFetch = (initialUrl, actions = {}) => {
   const [data, setData] = useState();

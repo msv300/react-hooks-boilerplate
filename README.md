@@ -2,7 +2,7 @@
 
 This boilerplate could help you start to with React Hooks, comes packed with webpack, hot reloading, lint, redux store configs.
 
-Just a try to add global store for react hooks using redux store.
+Just a try to add global store for react hooks using redux store. Feel free to customize it to your needs.
 
 To install dependencies
 ```
